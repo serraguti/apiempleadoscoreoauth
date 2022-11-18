@@ -20,6 +20,11 @@ namespace ApiEmpleadosOAuth.Repositories
             return this.context.Empleados.ToList();
         }
 
+        public List<Empleado> GetEmpleadosOficio(string oficio)
+        {
+            return this.context.Empleados.Where(z => z.Oficio == oficio).ToList();
+        }
+
         public Empleado BuscarEmpleado(int idempleado)
         {
             return this.context.Empleados

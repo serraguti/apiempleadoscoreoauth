@@ -23,12 +23,19 @@ namespace ApiEmpleadosOAuth.Controllers
             this.repo = repo;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public ActionResult<List<Empleado>> GetEmpleados()
         {
             return this.repo.GetEmpleados();
         }
+
+        //[HttpGet]
+        //[Route("[action]/{oficio}]")]
+        //public ActionResult<List<Empleado>> EmpleadosOficio(string oficio)
+        //{
+        //    return this.repo.GetEmpleadosOficio(oficio);
+        //}
 
         [HttpGet("{id}")]
         public ActionResult<Empleado> BuscarEmpleado(int id)
